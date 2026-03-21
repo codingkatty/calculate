@@ -6,6 +6,7 @@ export default function CalcButton() {
             <img
                 src="assets/button-top.png"
                 className="w-full h-full object-fill pixel front"
+                draggable="false"
             />
         </button>
     )
