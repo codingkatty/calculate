@@ -72,7 +72,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row px-[10%] mt-[5%] items-center md:items-start gap-6">
           <img src="assets/question.png" draggable="false" className="pixel w-[40%] max-w-[300px] bounce-anim" />
           <div className="bg-[#272820] w-[90%] lg:ml-[80px] p-10">
-            <h1 className="font-editundo text-5xl break-normal md:break-all">make anything that can <span className="text-[#f92672]">c</span><span className="text-[#fd971f]">a</span><span className="text-[#e6db74]">l</span><span className="text-[#a6e22e]">c</span><span className="text-[#66d9ef]">u</span><span className="text-[#ae81ff]">l</span><span className="text-[#f92672]">a</span><span className="text-[#fd971f]">t</span><span className="text-[#e6db74]">e</span>,<br /> get a calculator!</h1>
+            <h1 className="font-editundo text-5xl">make anything that can <span className="text-[#f92672]">c</span><span className="text-[#fd971f]">a</span><span className="text-[#e6db74]">l</span><span className="text-[#a6e22e]">c</span><span className="text-[#66d9ef]">u</span><span className="text-[#ae81ff]">l</span><span className="text-[#f92672]">a</span><span className="text-[#fd971f]">t</span><span className="text-[#e6db74]">e</span>,<br /> get a calculator!</h1>
             <br />
             <p className="font-pixel text-xl -tracking-[.1em]">ideas- a calculator with bad UI, an abacus, a game with calculators as the main game mechanic, calculator in terminal, graph stuff, calculator app... anything!</p>
           </div>
