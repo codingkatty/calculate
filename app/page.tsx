@@ -3,6 +3,7 @@
 import PixelBlast from './PixelBlast';
 import CalcButton from './CalcButton'
 import Tilt from 'react-parallax-tilt'
+import Prize from './Prize'
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
           edgeFade={0}
           style={{ position: 'absolute' }}
         />
-        <img src="assets/rainbow-big.png" className="absolute pixel top-0 right-0" style={{
+        <img draggable="false" src="assets/rainbow-big.png" className="absolute pixel top-0 right-0" style={{
           width: "45%"
         }} />
         <Tilt
@@ -67,9 +68,9 @@ export default function Home() {
           </div>
         </Tilt>
       </div>
-      <img src="assets/rainbow.png" className="pixel min-h-[80px] w-full -translate-y-10 -rotate-2 mx-auto" />
+      <img src="assets/rainbow.png" className="pixel min-h-[80px] w-full -translate-y-10 -rotate-2 mx-auto" draggable="false" />
       <main className="bg-black">
-        <div className="flex flex-col md:flex-row p-10 lg:mx-[10%] mt-[5%] items-center md:items-start gap-6">
+        <div className="flex flex-col md:flex-row p-10 lg:mx-[10%] mt-[5%] mb-[5%] items-center md:items-start gap-6">
           <img src="assets/question.png" draggable="false" className="pixel w-[40%] max-w-[300px] bounce-anim" />
           <div className="bg-[#272820] w-full p-10">
             <h1 className="font-editundo text-5xl">make anything that can <span className="text-[#f92672]">c</span><span className="text-[#fd971f]">a</span><span className="text-[#e6db74]">l</span><span className="text-[#a6e22e]">c</span><span className="text-[#66d9ef]">u</span><span className="text-[#ae81ff]">l</span><span className="text-[#f92672]">a</span><span className="text-[#fd971f]">t</span><span className="text-[#e6db74]">e</span>,<br /> get a calculator!</h1>
@@ -77,22 +78,41 @@ export default function Home() {
             <p className="font-pixel text-xl -tracking-[.1em]">ideas- a calculator with bad UI, an abacus, a game with calculators as the main game mechanic, calculator in terminal, graph stuff, calculator app... anything!</p>
           </div>
         </div>
-        <img src="assets/rainbow.png" className="pixel min-h-[80px] w-full rotate-2 mx-auto" />
+        <img src="assets/rainbow.png" className="pixel min-h-[80px] w-full rotate-2 mx-auto" draggable="false" />
         <div className="p-10 lg:mx-[20%]">
           <h1 className="font-editundo text-8xl">Prizes</h1>
           <br />
           <div className="flex flex-col md:flex-row gap-6">
-            <div className="bg-[#272820] min-w-[50%] p-10">
-              <h1 className="text-4xl">Calculator (exact models tbd) + stickersheet</h1>
-              <p className="text-2xl">~6 hours</p>
-            </div>
-            <div className="bg-[#272820] min-w-[50%] p-10">
-              <h1 className="text-4xl">Grant/Materials to build a calculator</h1>
-              <p className="text-2xl">~9 hours</p>
-            </div>
+            <Prize 
+              title="Basic Calculator + stickersheet!"
+              description="(*exact models tbd)"
+              image="prizes/calculator.png"
+              timeEst="~3 hours"
+            />
+            <Prize 
+              title="Scientific Calculator + stickersheet!"
+              description="(*exact models tbd)"
+              image="prizes/scientific.png"
+              timeEst="~7 hours"
+            />
+          </div>
+          <br />
+          <div className="flex flex-col md:flex-row gap-6">
+            <Prize 
+              title="Grant/Materials to build a calculator"
+              description={<>+ stickersheet! (credits: this is a <a href="https://github.com/shaoxiongduan/sci-calc" target="_blank" className="text-[#f92672] underline">SCI-CALC</a>!)</>}
+              image="prizes/scicalc.png"
+              timeEst="~9 hours"
+            />
+            <Prize 
+              title="Graphing Calculator + stickersheet"
+              description="(*exact models tbd)"
+              image="prizes/graphing.png"
+              timeEst="~13 hours"
+            />
           </div>
         </div>
-        <img src="assets/rainbow.png" className="pixel min-h-[80px] w-full -rotate-2 mx-auto" />
+        <img src="assets/rainbow.png" className="pixel min-h-[80px] w-full -rotate-2 mx-auto" draggable="false" />
       </main>
       <footer>
         <h1 className="text-2xl font-pixel -tracking-[.1em] p-10">made by candy</h1>
