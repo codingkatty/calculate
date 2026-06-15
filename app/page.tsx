@@ -1,122 +1,201 @@
 "use client"
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+import { useGSAP } from '@gsap/react';
+import { useEffect } from 'react';
 
-import PixelBlast from './PixelBlast';
-import CalcButton from './CalcButton'
-import Tilt from 'react-parallax-tilt'
-import Prize from './Prize'
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(SplitText);
 
 export default function Home() {
-  return (
-    <div>
-      <div className="h-[50vh] lg:h-screen bg-black relative">
-        <PixelBlast
-          variant="square"
-          pixelSize={7}
-          color="#272820"
-          patternScale={3}
-          patternDensity={1.3}
-          enableRipples={false}
-          rippleSpeed={0.3}
-          rippleThickness={0.1}
-          rippleIntensityScale={1}
-          speed={0.6}
-          transparent
-          edgeFade={0}
-          style={{ position: 'absolute' }}
-        />
-        <img draggable="false" src="assets/rainbow-big.png" className="absolute pixel top-0 right-0" style={{
-          width: "45%"
-        }} />
-        <Tilt
-          tiltReverse={true}
-          tiltMaxAngleX={4}
-          tiltMaxAngleY={4}
-          className="relative w-full h-full lg:w-3/5 lg:ml-[50px] -rotate-2 flex items-end">
-          <div className="relative w-full">
-            <img
-              src="assets/calculator.png"
-              className="w-full block h-auto pixel"
-              draggable="false"
-            />
-            <div
-              className="absolute inset-0 grid grid-cols-4 left-1/2 -translate-x-1/2"
-              style={{
-                width: '85.7%',
-                height: '46.1%',
-                columnGap: '5.26%',
-                rowGap: '2.13%',
-                top: '45%'
-              }}
-            >
-              <CalcButton />
-              <CalcButton />
-              <CalcButton />
-              <CalcButton />
-              <CalcButton />
-              <CalcButton />
-              <CalcButton />
-              <CalcButton />
-              <CalcButton />
-              <CalcButton />
-              <CalcButton />
-              <CalcButton />
-              <CalcButton />
-              <CalcButton />
-              <CalcButton />
-              <CalcButton />
+    useEffect(() => {
+        import("image-map-resizer").then((module) => module.default());
+    }, []);
+    useGSAP(() => {
+        gsap.to(".clouds", {
+            scrollTrigger: {
+                trigger: ".hero",
+                start: "top top",
+                end: "+=200",
+                scrub: 1
+            },
+            autoAlpha: 0
+        });
+
+        let split = SplitText.create(".headline", { type: "chars" });
+        split.chars.forEach((char) => {
+            let hoverAnimation = gsap.to(char as HTMLElement, {
+                y: -5,
+                duration: 0.2,
+                paused: true,
+            });
+
+            (char as HTMLElement).addEventListener("mouseenter", () => {
+                hoverAnimation.timeScale(1).play();
+            });
+            (char as HTMLElement).addEventListener("mouseleave", () => {
+                hoverAnimation.timeScale(5).reverse();
+            });
+        });
+
+        gsap.to(".float", {
+            x: () => gsap.utils.random([-10, 10]),
+            y: () => gsap.utils.random([-10, 10]),
+            ease: "sine.inOut",
+            autoRound: false,
+            duration: gsap.utils.random([2, 4]),
+            repeat: -1,
+            repeatRefresh: true,
+        });
+
+        gsap.fromTo(".float",
+            {
+                rotation: -5
+            },
+            {
+                rotation: 5,
+                duration: 45,
+                ease: "sine.inOut",
+                repeat: -1,
+                yoyo: true
+            }
+        );
+    })
+    return (
+        <main>
+            <div className="lg:h-screen h-[50%] bg-[#303830] hero">
+                <div className="relative pt-[3%]">
+                    <img draggable="false" src="assets/flower1.GIF" className="absolute pixel lg:w-[calc(100vw*60/384)] mt-[22%] ml-[6%]" />
+                    <img draggable="false" src="assets/flower2.GIF" className="absolute pixel lg:w-[calc(100vw*49/384)]" />
+                    <div className="absolute lg:mt-[5%] mt-[15%] w-full">
+                        <div className="relative">
+                            <img draggable="false" src="assets/wires_left.GIF" className="pixel w-[calc(100vw*100/384)] absolute" />
+                            <img draggable="false" src="assets/wires_right.GIF" className="pixel w-[calc(100vw*100/384)] absolute right-0" />
+                        </div>
+                    </div>
+                    <div className="lg:w-[calc(100vw*184/384)] absolute inset-x-0 mx-auto w-[90%]">
+                        <div className="relative">
+                            <img draggable="false" src="assets/calculator.png" className="pixel w-full absolute" useMap="#image-map" />
+                            <map name="image-map">
+                                <area target="_blank" alt="" title="" href="https://hackclub.com/" coords="100,23,9,4" shape="rect" />
+                            </map>
+                            <img draggable="false" src="assets/screen.GIF" className="pixel absolute saturate-130 mt-[14.3%] ml-[9.8%] w-[80.4%]" />
+                        </div>
+                    </div>
+                </div>
+                <img draggable="false" src="assets/clouds.png" className="lg:fixed absolute w-full pixel z-[10] lg:mt-[28%] mt-[70%] clouds" />
+                <h2 className="font-pirkkala lg:text-3xl lg:w-[calc(100vw*80/384)] lg:text-left lg:ml-[77%] lg:mt-[25%] md:left-0 md:right-0 block text-center mt-[98%] text-xl">make a calculator, get a calculator!</h2>
             </div>
-          </div>
-        </Tilt>
-      </div>
-      <img src="assets/rainbow.png" className="pixel min-h-[80px] w-full -translate-y-10 -rotate-2 mx-auto" draggable="false" />
-      <main className="bg-black">
-        <div className="flex flex-col md:flex-row p-10 lg:mx-[10%] mt-[5%] mb-[5%] items-center md:items-start gap-6">
-          <img src="assets/question.png" draggable="false" className="pixel w-[40%] max-w-[300px] bounce-anim" />
-          <div className="bg-[#272820] w-full p-10">
-            <h1 className="font-editundo text-5xl">make anything that can <span className="text-[#f92672]">c</span><span className="text-[#fd971f]">a</span><span className="text-[#e6db74]">l</span><span className="text-[#a6e22e]">c</span><span className="text-[#66d9ef]">u</span><span className="text-[#ae81ff]">l</span><span className="text-[#f92672]">a</span><span className="text-[#fd971f]">t</span><span className="text-[#e6db74]">e</span>,<br /> get a calculator!</h1>
-            <br />
-            <p className="font-pixel text-xl -tracking-[.1em]">ideas- a calculator with bad UI, an abacus, a game with calculators as the main game mechanic, calculator in terminal, graph stuff, calculator app... anything!</p>
-          </div>
-        </div>
-        <img src="assets/rainbow.png" className="pixel min-h-[80px] w-full rotate-2 mx-auto" draggable="false" />
-        <div className="p-10 lg:mx-[20%]">
-          <h1 className="font-editundo text-8xl">Prizes</h1>
-          <br />
-          <div className="flex flex-col md:flex-row gap-6">
-            <Prize 
-              title="Basic Calculator + stickersheet!"
-              description="(*exact models tbd)"
-              image="prizes/calculator.png"
-              timeEst="~3 hours"
-            />
-            <Prize 
-              title="Scientific Calculator + stickersheet!"
-              description="(*exact models tbd)"
-              image="prizes/scientific.png"
-              timeEst="~7 hours"
-            />
-          </div>
-          <br />
-          <div className="flex flex-col md:flex-row gap-6">
-            <Prize 
-              title="Grant/Materials to build a calculator"
-              description={<>+ stickersheet! (credits: this is a <a href="https://github.com/shaoxiongduan/sci-calc" target="_blank" className="text-[#f92672] underline">SCI-CALC</a>!)</>}
-              image="prizes/scicalc.png"
-              timeEst="~9 hours"
-            />
-            <Prize 
-              title="Graphing Calculator + stickersheet"
-              description="(*exact models tbd)"
-              image="prizes/graphing.png"
-              timeEst="~13 hours"
-            />
-          </div>
-        </div>
-        <img src="assets/rainbow.png" className="pixel min-h-[80px] w-full -rotate-2 mx-auto" draggable="false" />
-      </main>
-      <footer>
-        <h1 className="text-2xl font-pixel -tracking-[.1em] p-10">made by candy</h1>
-      </footer>
-    </div>
-  );
+            <div className="w-full my-10">
+                <fieldset className="border lg:mx-[2%] mx-[5%] mt-[20%] lg:mt-[5%]">
+                    <legend className="mx-auto font-mario px-[10px] text-2xl lg:text-5xl headline select-none">the challenge</legend>
+                    <p className="font-pirkkala text-xl lg:p-16 p-8 lg:w-[60%]">Hey there! Have you ever tried building a calculator? mmm... I made a really simple one when I was leaning python. Anywaysss- from <span className="b">June 22nd</span> till <span className="l">July 17th</span>, build any project that can calculate, and we'll ship you an <span className="y">(actual) calculator!!</span><br /><br />Yep!! For example, you could make a [<span className="b">calculator app for your <span className="text-white">phone?? sprig?? fridge???</span></span>], [<span className="l">rhythm game involving calculators</span>], or maybe [<span className="g">the worst calculator to ever exist?????</span>] ...well...anything!! even a simple calculator as long as you add your own unique twist to it :-)</p>
+                </fieldset>
+                <div className="flex lg:mx-[2%] mx-[5%] mt-[20%] lg:mt-[5%] justify-between lg:flex-row flex-col h-auto">
+                    <fieldset className="border lg:w-[48%] w-full">
+                        <legend className="mx-auto font-mario px-[10px] text-2xl lg:text-5xl headline select-none">prizes</legend>
+                        <div className="lg:p-16 p-8">
+                            <p className="font-pirkkala text-xl">you can get different calculators based on <span className="b">hours spent on your project</span> and <span className="l">the quality of your project</span>!</p>
+                            <div className="relative flex justify-center w-full mt-[50px] h-auto">
+                                <img src="assets/prize.gif" className="pixel w-[70%] h-auto" />
+                                <img src="prizes/1.png" className="absolute w-[70%]" />
+                            </div>
+                            <p className="text-center my-5 font-pirkkala text-xl"><span className="l">simple:</span> basic calculator :p (~3hr)</p>
+
+                            <div className="relative flex justify-center w-full mt-[50px] h-auto">
+                                <img src="assets/prize.gif" className="pixel w-[70%] h-auto" />
+                                <img src="prizes/2.png" className="absolute w-[70%]" />
+                            </div>
+                            <p className="text-center my-5 font-pirkkala text-xl"><span className="y">medium:</span> scientific calculator (~7hr)</p>
+
+                            <div className="relative flex justify-center w-full mt-[50px] h-auto">
+                                <img src="assets/prize.gif" className="pixel w-[70%] h-auto" />
+                                <img src="prizes/3.png" className="absolute w-[70%]" />
+                            </div>
+                            <p className="text-center my-5 font-pirkkala text-xl"><span className="b">impressive:</span> get a TI-84 plus CE! (~24hr)</p>
+
+                            <div className="relative flex justify-center w-full mt-[50px] h-auto">
+                                <img src="prizes/huh.PNG" className="w-[70%] pixel" />
+                            </div>
+                            <p className="text-center my-5 font-pirkkala text-xl"><span className="g">???:</span> design a calculator, get $5/hr to build a calculator!</p>
+                        </div>
+                    </fieldset>
+                    <fieldset className="border border-dotted border-[5px] border-[#fff4bb] lg:w-[48%] w-full mt-6">
+                        <div className="lg:p-16 p-8">
+                            <p className="font-pirkkala text-xl">and for the !!<span className="y">best <span className="text-white">(or worst?)</span></span>!! projects- here are some extra prizes you could earn!! (you could get these regardless of hours spent.) <br /> <br /> Submit before <span className="y">July 11th</span> to qualify. winners will be decided by voting!</p>
+                            <div className="relative flex justify-center w-full mt-[50px] h-auto">
+                                <img src="assets/special.gif" className="pixel w-[70%] h-auto" />
+                                <img src="prizes/6.png" className="absolute w-[70%]" />
+                            </div>
+                            <p className="text-center my-5 font-pirkkala text-xl"><span className="y">best music:</span> musical calculator!</p>
+
+                            <div className="relative flex justify-center w-full mt-[50px] h-auto">
+                                <img src="assets/special.gif" className="pixel w-[70%] h-auto" />
+                                <img src="prizes/5.png" className="absolute w-[70%]" />
+                            </div>
+                            <p className="text-center my-5 font-pirkkala text-xl"><span className="y">worst calculator:</span> abacus</p>
+
+                            <div className="relative flex justify-center w-full mt-[50px] h-auto">
+                                <img src="assets/special.gif" className="pixel w-[70%] h-auto" />
+                                <img src="prizes/4.png" className="absolute w-[70%]" />
+                            </div>
+                            <p className="text-center my-5 font-pirkkala text-xl"><span className="y">cutest calculator:</span> tamagotchi</p>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div className="flex flex-col items-center w-full gap-8">
+                <p className="font-pirkkala lg:text-3xl text-xl w-[90%] text-center">aside from that, you'll get this stickersheet!</p>
+                <img draggable="false" src="assets/sticker.PNG" className="float lg:w-[50%] w-[80%] pixel" />
+            </div>
+            <div>
+                <fieldset className="border lg:mx-[2%] mx-[5%] mt-[20%] lg:mt-[5%]">
+                    <legend className="mx-auto font-mario px-[10px] text-2xl lg:text-5xl headline select-none">how??</legend>
+                    <p className="font-pirkkala text-xl lg:p-16 p-8 lg:w-[60%]">
+                        okok... I want to do your program- but how do I start? <br /><br />
+                        <span className="b">#1.</span> think of (cool!!!) ideas and allat <br />
+                        <span className="y">#2.</span> track your time with <a href="https://hackatime.hackclub.com/" className="coolink" target="_blank">hackatime</a>, this very super cool open source thingy <br />
+                        <span className="text-[#888888]">[hardware tracking coming (reaaaaaaal) soon(tm)]</span> <br />
+                        <span className="l">#3.</span> (optional) when you're done, feel free to ask the people in <a href="https://hackclub.enterprise.slack.com/archives/C0ARJHZPU9H" className="coolink" target="_blank">#calculate</a> for feedback! share you [beautiful] project!!! <br />
+                        <span className="g">#4.</span> submit it! and get prizes! yay!11!!!1!1
+                    </p>
+                </fieldset>
+            </div>
+            <div className="w-full my-10">
+                <div className="flex lg:mx-[2%] mx-[5%] mt-[20%] lg:mt-[5%] justify-between lg:flex-row flex-col h-auto">
+                    <fieldset className="border lg:w-[48%] w-full">
+                        <legend className="mx-auto font-mario px-[10px] text-2xl lg:text-5xl headline select-none">questions?</legend>
+                        <div className="lg:p-16 p-8">
+                            <p className="font-pirkkala text-xl">
+                                <span className="b">can i use AI?</span><br />
+                                we will not accept projects entirely made by AI, the total AI usage should be under 30%. your project should show real human effort!<br /><br />
+
+                                <span className="y">who is eligible?</span><br />
+                                anyone aged above 13 and below 18<br /><br />
+
+                                <span className="l">how much does it cost?</span><br />
+                                this program is 100% free!!<br /><br />
+
+                                <span className="g">is this legit?</span><br />
+                                this is a <a href="https://hackclub.com/" className="coolink" target="_blank">hack club</a> program. hack club has also ran many programs in the past! <a href="https://hackclub.com/programs" className="coolink" target="_blank">learn more</a><br /><br />                                
+                            </p><hr />
+                            <p className="font-pirkkala text-xl">
+                                <br />
+                                if you have any additional questions, feel free to ask in <a href="https://hackclub.enterprise.slack.com/archives/C0ARJHZPU9H" className="coolink" target="_blank">#calculate</a> or <a href="mailto:candyisakat@gmail.com" className="coolink">email me</a>!
+                            </p>
+                        </div>
+                    </fieldset>
+                    <div className="lg:w-[48%] w-full flex items-center justify-center">
+                        <p className="font-pirkkala lg:text-3xl text-xl text-center my-10">
+                            made with &lt;3 by teenagers, for teenagers
+                            <br />
+                            <a href="https://hackclub.com/" className="coolink" target="_blank">hack club</a> | <a href="https://slack.hackclub.com/" className="coolink" target="_blank">join the slack</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    )
 }

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
+  --background: #303830;
   --foreground: #ffffff;
 }
 
@@ -18,6 +18,18 @@
 
 @utility font-editundo {
   font-family: var(--font-editundo);
+}
+
+@utility font-pirkkala {
+  font-family: var(--font-pirkkala);
+}
+
+@utility font-mario {
+  font-family: var(--font-mario);
+}
+
+html {
+  background: var(--background);
 }
 
 body {
@@ -51,12 +63,47 @@ body {
 }
 
 @keyframes less-bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(-10%);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
+
   50% {
     transform: none;
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
+}
+
+.b {
+  color: #5ce0f1;
+}
+
+.y {
+  color: #ffe255;
+}
+
+.l {
+  color: #abff55;
+}
+
+.g {
+  color: #57d071;
+}
+
+.b, .y, .l, .g {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 3px;
+  cursor: pointer;
+}
+
+.coolink {
+  color: #90ebff;
+  text-decoration-line: underline;
+}
+
+.coolink:hover {
+  color: #67d8fb;
 }
