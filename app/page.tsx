@@ -91,7 +91,13 @@ export default function Home() {
             <div className="w-full my-10">
                 <fieldset className="border lg:mx-[2%] mx-[5%] mt-[20%] lg:mt-[5%]">
                     <legend className="mx-auto font-mario px-[10px] text-2xl lg:text-5xl headline select-none">the challenge</legend>
-                    <p className="font-pirkkala text-xl lg:p-16 p-8 lg:w-[60%]">Hey there! Have you ever tried building a calculator? mmm... I made a really simple one when I was leaning python. Anywaysss- from <span className="b">June 22nd</span> till <span className="l">July 17th</span>, build any project that can calculate, and we'll ship you an <span className="y">(actual) calculator!!</span><br /><br />Yep!! For example, you could make a [<span className="b">calculator app for your <span className="text-white">phone?? sprig?? fridge???</span></span>], [<span className="l">rhythm game involving calculators</span>], or maybe [<span className="g">the worst calculator to ever exist?????</span>] ...well...anything!! even a simple calculator as long as you add your own unique twist to it :-)</p>
+                    <p className="font-pirkkala text-xl lg:p-16 p-8 lg:w-[60%]">Hey there! Have you ever tried building a calculator? I made a really simple one when I was first leaning python. Anywaysss- from <span className="b">June 22nd</span> till <span className="l">July 17th</span>: <br /> <br />
+                    
+                    <span className="text-3xl">
+                        <span className="text-[#fff4bb]">you ship</span>: any project that can calculate, and <br /> <span className="text-[#fff4bb]">we'll ship you</span> an <span className="y">(actual) calculator!!</span>
+                    </span>
+                    
+                    <br /><br />sounds good? you could make a [<span className="b">calculator app for your <span className="text-white">phone?? sprig?? fridge???</span></span>], [<span className="l">rhythm game involving calculators</span>], or maybe [<span className="g">the worst calculator to ever exist?????</span>] ...well...anything!! even a simple calculator as long as you add your own unique twist to it :-)</p>
                 </fieldset>
                 <div className="flex lg:mx-[2%] mx-[5%] mt-[20%] lg:mt-[5%] justify-between lg:flex-row flex-col h-auto">
                     <fieldset className="border lg:w-[48%] w-full">
@@ -159,7 +165,7 @@ export default function Home() {
                         <span className="y">#2.</span> track your time with <a href="https://hackatime.hackclub.com/" className="coolink" target="_blank">hackatime</a>, this very super cool open source thingy <br />
                         <span className="text-[#888888]">[hardware tracking coming (reaaaaaaal) soon(tm)]</span> <br />
                         <span className="l">#3.</span> (optional) when you're done, feel free to ask the people in <a href="https://hackclub.enterprise.slack.com/archives/C0ARJHZPU9H" className="coolink" target="_blank">#calculate</a> for feedback! share you [beautiful] project!!! <br />
-                        <span className="g">#4.</span> submit it! and get prizes! yay!11!!!1!1
+                        <span className="g">#4.</span> publish it to <a href="https://github.com" className="coolink" target="_blank">github</a> and submit it! and get prizes! yay!11!!!1!1
                     </p>
                 </fieldset>
             </div>
@@ -173,7 +179,7 @@ export default function Home() {
                                 we will not accept projects entirely made by AI, the total AI usage should be under 30%. your project should show real human effort!<br /><br />
 
                                 <span className="y">who is eligible?</span><br />
-                                anyone aged above 13 and below 18<br /><br />
+                                anyone aged between 13 and 18 (includes 18 year olds!)<br /><br />
 
                                 <span className="l">how much does it cost?</span><br />
                                 this program is 100% free!!<br /><br />
