@@ -91,13 +91,17 @@ export default function Home() {
             <div className="w-full my-10">
                 <fieldset className="border lg:mx-[2%] mx-[5%] mt-[20%] lg:mt-[5%]">
                     <legend className="mx-auto font-mario px-[10px] text-2xl lg:text-5xl headline select-none">the challenge</legend>
-                    <p className="font-pirkkala text-xl lg:p-16 p-8 lg:w-[60%]">Hey there! Have you ever tried building a calculator? I made a really simple one when I was first leaning python. Anywaysss- from <span className="b">June 22nd</span> till <span className="l">July 17th</span>: <br /> <br />
+                    <p className="font-pirkkala text-xl lg:px-16 px-8 lg:pt-16 pt-8 lg:w-[60%]">Hey there! Have you ever tried building a calculator? I made a really simple one when I was first leaning python. Anywaysss- from <span className="b">June 22nd</span> till <span className="l">July 17th</span>: <br /> <br />
                     
                     <span className="text-3xl">
                         <span className="text-[#fff4bb]">you ship</span>: any project that can calculate, and <br /> <span className="text-[#fff4bb]">we'll ship you</span> an <span className="y">(actual) calculator!!</span>
                     </span>
                     
-                    <br /><br />sounds good? you could make a [<span className="b">calculator app for your <span className="text-white">phone?? sprig?? fridge???</span></span>], [<span className="l">rhythm game involving calculators</span>], or maybe [<span className="g">the worst calculator to ever exist?????</span>] ...well...anything!! even a simple calculator as long as you add your own unique twist to it :-)</p>
+                    <br /><br />sounds good? you could make a [<span className="b">calculator app for your <span className="text-white">phone?? sprig?? fridge???</span></span>], [<span className="l">rhythm game involving calculators</span>], or maybe [<span className="g">the worst calculator to ever exist?????</span>] ...well...anything!! even a simple calculator as long as you add your own unique twist to it :-)
+                    </p>
+                    <div className="lg:px-16 px-8">
+                        <button className="coolbtn mt-[40px] mb-[60px] font-pirkkala text-xl">Submit</button>
+                    </div>
                 </fieldset>
                 <div className="flex lg:mx-[2%] mx-[5%] mt-[20%] lg:mt-[5%] justify-between lg:flex-row flex-col h-auto">
                     <fieldset className="border lg:w-[48%] w-full">

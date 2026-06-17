@@ -113,3 +113,9 @@ body {
 .coolink:hover {
   color: #67d8fb;
 }
+
+.coolbtn {
+  background-color: #848584;
+  padding: 5px 50px;
+  border-radius: 10px;
+}
