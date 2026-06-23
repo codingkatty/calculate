@@ -137,3 +137,25 @@ body {
   background-color: #30c2d3;
   color:#000000;
 }
+
+.nav-links {
+  padding: 10%;
+  font-family: var(--font-pirkkala);
+}
+
+.nav-links ul {
+  margin-bottom: 10px;
+}
+
+.navlink {
+  color: #ffffff;
+  text-decoration-line: underline;
+}
+
+.navlink:hover {
+  color: #ffcccc;
+}
+
+.navlink:focus {
+  color: #ff6f6f;
+}

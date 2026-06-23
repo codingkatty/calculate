@@ -4,7 +4,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from '@gsap/react';
 import { useEffect } from 'react';
-import { authClient } from '@/lib/auth-client';
+import { useRouter } from 'next/navigation';
+import { router } from "better-auth/api";
+//import { authClient } from '@/lib/auth-client';
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -65,11 +67,15 @@ export default function Home() {
         );
     })
 
-    async function handleLogin() {
+    /*async function handleLogin() {
         await authClient.signIn.oauth2({
             providerId: "hackclub",
             callbackURL: "/dashboard",
         })
+    }*/
+    const router = useRouter()
+    function gotoGuides() {
+        router.push("/guides")
     }
     return (
         <main>
@@ -94,21 +100,21 @@ export default function Home() {
                     </div>
                 </div>
                 <img draggable="false" src="assets/clouds.png" className="lg:fixed absolute w-full pixel z-[10] lg:mt-[28%] mt-[70%] clouds" />
-                <h2 className="font-pirkkala lg:text-3xl lg:w-[calc(100vw*80/384)] lg:text-left lg:ml-[77%] lg:mt-[23%] md:left-0 md:right-0 block text-center mt-[98%] text-xl">make a project involving numbers, get a calculator!</h2>
+                <h2 className="font-pirkkala lg:text-3xl lg:w-[calc(100vw*80/384)] lg:text-left lg:ml-[77%] lg:mt-[23%] md:left-0 md:right-0 block text-center mt-[98%] text-xl">make a project involving numbers, <br /> get a calculator!</h2>
             </div>
             <div className="w-full my-10">
                 <fieldset className="border lg:mx-[2%] mx-[5%] mt-[20%] lg:mt-[5%]">
                     <legend className="mx-auto font-mario px-[10px] text-2xl lg:text-5xl headline select-none">the challenge</legend>
-                    <p className="font-pirkkala text-xl lg:px-16 px-8 lg:pt-16 pt-8 lg:w-[60%]">Hey there! From <span className="b">June 23rd</span> till <span className="l">July 17th</span>: <br /> <br />
+                    <p className="font-pirkkala text-xl lg:px-16 px-8 lg:pt-16 pt-8 lg:w-[60%]">Hey there! From <span className="b">June 23rd</span> till <span className="l">July 17th</span>... <br /> <br />
 
                         <span className="text-3xl">
-                            <span className="text-[#fff4bb]">you ship</span>: any project that involves numbers, and <br /> <span className="text-[#fff4bb]">we'll ship you</span> an <span className="y">(actual) calculator!!</span>
+                            <span className="text-[#fff4bb]">make</span> any project that involves numbers, and <br /> <span className="text-[#fff4bb]">we'll ship you</span> an <span className="y">(actual) calculator!!</span>
                         </span>
 
                         <br /><br />sounds good? you could make a [<span className="b">calculator app for your <span className="text-white">phone?? sprig?? fridge???</span></span>], [<span className="l">rhythm game involving math</span>], or maybe [<span className="g">the worst calculator to ever exist?????</span>], [<span className="y">physics engine??</span>] ...well...anything!! as long as you add your own unique twist to it :-)
                     </p>
                     <div className="lg:px-16 px-8">
-                        <button className="coolbtn mt-[40px] lg:mb-[60px] mb-[10px] font-pirkkala text-xl">Submit</button>
+                        <button className="coolbtn mt-[40px] lg:mb-[60px] mb-[60px] font-pirkkala text-xl">Submit</button>
                         {/*<button className="coolbtn mb-[60px] font-pirkkala text-xl lg:ml-[12px]">Hardware/Art Time Tracker</button>*/}
                     </div>
                 </fieldset>
@@ -172,7 +178,7 @@ export default function Home() {
             <div>
                 <fieldset className="border lg:mx-[2%] mx-[5%] mt-[20%] lg:mt-[5%]">
                     <legend className="mx-auto font-mario px-[10px] text-2xl lg:text-5xl headline select-none">how??</legend>
-                    <p className="font-pirkkala text-xl lg:p-16 p-8 lg:w-[60%]">
+                    <p className="font-pirkkala text-xl lg:px-16 px-8 lg:w-[60%] lg:pt-16 pt-8 pb-8">
                         okok... I want to do your program- but how do I start? <br /><br />
                         <span className="b">#1.</span> think of (cool!!!) ideas and allat <br />
                         + + + + + + + + + + + + + + + + + + + <br />
@@ -183,6 +189,9 @@ export default function Home() {
                         * * * * * * * * * * * * * * * * * * * * * * * <br />
                         <span className="g">#4.</span> publish it to <a href="https://github.com" className="coolink" target="_blank">github</a> and submit it! and get prizes! yay!11!!!1!1
                     </p>
+                    <div className="lg:px-16 px-8">
+                        <button className="otherbtn mb-[60px] font-pirkkala text-xl" onClick={gotoGuides}>see guides</button>
+                    </div>
                 </fieldset>
             </div>
             <div className="w-full my-10">
