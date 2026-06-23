@@ -94,22 +94,22 @@ export default function Home() {
                     </div>
                 </div>
                 <img draggable="false" src="assets/clouds.png" className="lg:fixed absolute w-full pixel z-[10] lg:mt-[28%] mt-[70%] clouds" />
-                <h2 className="font-pirkkala lg:text-3xl lg:w-[calc(100vw*80/384)] lg:text-left lg:ml-[77%] lg:mt-[25%] md:left-0 md:right-0 block text-center mt-[98%] text-xl">make a calculator, get a calculator!</h2>
+                <h2 className="font-pirkkala lg:text-3xl lg:w-[calc(100vw*80/384)] lg:text-left lg:ml-[77%] lg:mt-[23%] md:left-0 md:right-0 block text-center mt-[98%] text-xl">make a project involving numbers, get a calculator!</h2>
             </div>
             <div className="w-full my-10">
                 <fieldset className="border lg:mx-[2%] mx-[5%] mt-[20%] lg:mt-[5%]">
                     <legend className="mx-auto font-mario px-[10px] text-2xl lg:text-5xl headline select-none">the challenge</legend>
-                    <p className="font-pirkkala text-xl lg:px-16 px-8 lg:pt-16 pt-8 lg:w-[60%]">Hey there! Have you ever tried building a calculator? I made a really simple one when I was first leaning python. Anywaysss- from <span className="b">June 22nd</span> till <span className="l">July 17th</span>: <br /> <br />
+                    <p className="font-pirkkala text-xl lg:px-16 px-8 lg:pt-16 pt-8 lg:w-[60%]">Hey there! From <span className="b">June 23rd</span> till <span className="l">July 17th</span>: <br /> <br />
 
                         <span className="text-3xl">
-                            <span className="text-[#fff4bb]">you ship</span>: any project that can calculate, and <br /> <span className="text-[#fff4bb]">we'll ship you</span> an <span className="y">(actual) calculator!!</span>
+                            <span className="text-[#fff4bb]">you ship</span>: any project that involves numbers, and <br /> <span className="text-[#fff4bb]">we'll ship you</span> an <span className="y">(actual) calculator!!</span>
                         </span>
 
-                        <br /><br />sounds good? you could make a [<span className="b">calculator app for your <span className="text-white">phone?? sprig?? fridge???</span></span>], [<span className="l">rhythm game involving calculators</span>], or maybe [<span className="g">the worst calculator to ever exist?????</span>] ...well...anything!! even a simple calculator as long as you add your own unique twist to it :-)
+                        <br /><br />sounds good? you could make a [<span className="b">calculator app for your <span className="text-white">phone?? sprig?? fridge???</span></span>], [<span className="l">rhythm game involving math</span>], or maybe [<span className="g">the worst calculator to ever exist?????</span>], [<span className="y">physics engine??</span>] ...well...anything!! as long as you add your own unique twist to it :-)
                     </p>
                     <div className="lg:px-16 px-8">
                         <button className="coolbtn mt-[40px] lg:mb-[60px] mb-[10px] font-pirkkala text-xl">Submit</button>
-                        <button className="otherbtn mb-[60px] font-pirkkala text-xl lg:ml-[12px]" onClick={handleLogin}>Hardware/Art Time Tracker</button>
+                        {/*<button className="coolbtn mb-[60px] font-pirkkala text-xl lg:ml-[12px]">Hardware/Art Time Tracker</button>*/}
                     </div>
                 </fieldset>
                 <div className="flex lg:mx-[2%] mx-[5%] mt-[20%] lg:mt-[5%] justify-between lg:flex-row flex-col h-auto">
@@ -160,7 +160,7 @@ export default function Home() {
                                 <img src="assets/special.gif" className="pixel w-[70%] h-auto" />
                                 <img src="prizes/4.png" className="absolute w-[70%]" />
                             </div>
-                            <p className="text-center my-5 font-pirkkala text-xl"><span className="y">cutest calculator:</span> tamagotchi</p>
+                            <p className="text-center my-5 font-pirkkala text-xl"><span className="y">cutest project:</span> tamagotchi</p>
                         </div>
                     </fieldset>
                 </div>
@@ -175,9 +175,12 @@ export default function Home() {
                     <p className="font-pirkkala text-xl lg:p-16 p-8 lg:w-[60%]">
                         okok... I want to do your program- but how do I start? <br /><br />
                         <span className="b">#1.</span> think of (cool!!!) ideas and allat <br />
-                        <span className="y">#2.</span> track your time with <a href="https://hackatime.hackclub.com/" className="coolink" target="_blank">hackatime</a>, this very super cool open source thingy <br />
-                        <span className="text-[#888888]">[hardware tracking coming (reaaaaaaal) soon(tm)]</span> <br />
-                        <span className="l">#3.</span> (optional) when you're done, feel free to ask the people in <a href="https://hackclub.enterprise.slack.com/archives/C0ARJHZPU9H" className="coolink" target="_blank">#calculate</a> for feedback! share you [beautiful] project!!! <br />
+                        + + + + + + + + + + + + + + + + + + + <br />
+                        <span className="y">#2.</span> track your time with <a href="https://hackatime.hackclub.com/" className="coolink" target="_blank">hackatime</a>, its a tool for time tracking :p <br />
+                        ( -&gt; please use <a href="https://lapse.hackclub.com" className="coolink" target="_blank">lapse</a> for hardware or art tracking!! )<br />
+                        - - - - - - - - - - - - - - - - - - - - - - - <br />
+                        <span className="l">#3.</span> ask the people in <a href="https://hackclub.enterprise.slack.com/archives/C0ARJHZPU9H" className="coolink" target="_blank">#calculate</a> for feedback! + share your project!!! <br />
+                        * * * * * * * * * * * * * * * * * * * * * * * <br />
                         <span className="g">#4.</span> publish it to <a href="https://github.com" className="coolink" target="_blank">github</a> and submit it! and get prizes! yay!11!!!1!1
                     </p>
                 </fieldset>
