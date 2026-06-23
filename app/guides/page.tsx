@@ -1,10 +1,12 @@
+import Link from 'next/link';
+
 export default function Guide() {
     return (
         <div>
             <nav className="fixed bg-[#545f54] lg:h-screen lg:w-[20%] lg:block hidden">
                 <li className="nav-links">
                     <ul>
-                        <a>&lt;- go back</a>
+                        <Link href="/">&lt;- go back</Link>
                     </ul>
                     <hr />
                     <br />
