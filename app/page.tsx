@@ -77,6 +77,9 @@ export default function Home() {
     function gotoGuides() {
         router.push("/guides")
     }
+    function gotoForm() {
+        window.open("https://submit.hackclub.com/calculate", "_blank")
+    }
     return (
         <main>
             <div className="lg:h-screen h-[50%] bg-[#303830] hero">
@@ -114,7 +117,7 @@ export default function Home() {
                         <br /><br />sounds good? you could make a [<span className="b">calculator app for your <span className="text-white">phone?? sprig?? fridge???</span></span>], [<span className="l">rhythm game involving math</span>], or maybe [<span className="g">the worst calculator to ever exist?????</span>], [<span className="y">physics engine??</span>] ...well...anything!! as long as you add your own unique twist to it :-)
                     </p>
                     <div className="lg:px-16 px-8">
-                        <button className="coolbtn mt-[40px] lg:mb-[60px] mb-[60px] font-pirkkala text-xl">Submit</button>
+                        <button className="otherbtn mt-[40px] lg:mb-[60px] mb-[60px] font-pirkkala text-xl" onClick={gotoForm}>Submit</button>
                         {/*<button className="coolbtn mb-[60px] font-pirkkala text-xl lg:ml-[12px]">Hardware/Art Time Tracker</button>*/}
                     </div>
                 </fieldset>
