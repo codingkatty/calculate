@@ -217,7 +217,7 @@ export default function Home() {
                             </p><hr />
                             <p className="font-pirkkala text-xl">
                                 <br />
-                                if you have any additional questions, feel free to ask in <a href="https://hackclub.enterprise.slack.com/archives/C0ARJHZPU9H" className="coolink" target="_blank">#calculate</a> or <a href="mailto:candyisakat@gmail.com" className="coolink">email me</a>!
+                                if you have any additional questions, feel free to ask in <a href="https://hackclub.enterprise.slack.com/archives/C0ARJHZPU9H" className="coolink" target="_blank">#calculate</a> or <a href="mailto:candy@hackclub.com" className="coolink">email me</a>!
                             </p>
                         </div>
                     </fieldset>
