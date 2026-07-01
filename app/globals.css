@@ -158,3 +158,29 @@ body {
 .navlink:focus {
   color: #ff6f6f;
 }
+
+.rainbowbtn {
+  background-color: #7cedf9;
+  padding: 5px 50px;
+  border-radius: 10px;
+  color:#303830;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.rainbowbtn:hover {
+  background: linear-gradient(-45deg, #ff6b6b, #ff6b6b, #ff6b6b, #faae56, #fff763, #72ffa6, #66cdef, #7d65f5, #c37be4, #ff81f4, #ff6b6b, #ff6b6b);
+  background-size: 450% 400%;
+	animation: gradient 5s linear infinite;
+  color: white;
+  box-shadow: 0 0 20px #a0f2ff
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 0%;
+	}
+	100% {
+		background-position: -450% 00%;
+	}
+}

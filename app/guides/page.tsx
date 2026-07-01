@@ -52,7 +52,7 @@ export default function Guide() {
                     <p>
                         incase you want to track time for hardware or art which does not support hackatime extensions, you can use lapse! basically, lapse records your work (you'll have the option to choose between screen and camera) and you can sync your work to hackatime.
                         <br /><br />
-                        before you start tracking any long projects, i recommend you to test lapse beforehand to prevent losing tracked time!! as of writing, calculate (unfortunately) has yet to support lookout
+                        before you start tracking any long projects, i recommend you to test lapse beforehand to prevent losing tracked time!! lapse also supports lookout tracking now
                         <br /><br />
                         ok enough yapping- basically you should goto <a className="coolink" href="https://lapse.hackclub.com" target="_blank">lapse.hackclub.com</a> and sign in (you'll need a hackatime account for this). after that, you should get to this page. click the <span className="y">'create'</span> button to start!
                         <br /><br />

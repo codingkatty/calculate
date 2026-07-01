@@ -6,7 +6,6 @@ import { useGSAP } from '@gsap/react';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { router } from "better-auth/api";
-//import { authClient } from '@/lib/auth-client';
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -66,13 +65,6 @@ export default function Home() {
             }
         );
     })
-
-    /*async function handleLogin() {
-        await authClient.signIn.oauth2({
-            providerId: "hackclub",
-            callbackURL: "/dashboard",
-        })
-    }*/
     const router = useRouter()
     function gotoGuides() {
         router.push("/guides")
@@ -114,11 +106,10 @@ export default function Home() {
                             <span className="text-[#fff4bb]">make</span> any project that involves numbers, and <br /> <span className="text-[#fff4bb]">we'll ship you</span> an <span className="y">(actual) calculator!!</span>
                         </span>
 
-                        <br /><br />sounds good? you could make a [<span className="b">calculator app for your <span className="text-white">phone?? sprig?? fridge???</span></span>], [<span className="l">rhythm game involving math</span>], or maybe [<span className="g">the worst calculator to ever exist?????</span>], [<span className="y">physics engine??</span>] ...well...anything!! as long as you add your own unique twist to it :-)
+                        <br /><br />sounds good? you could make a [<span className="b">calculator app for your <span className="text-white">phone?? sprig?? fridge???</span></span>], [<span className="l">rhythm game involving math</span>], or maybe [<span className="g">the worst calculator to ever exist?????</span>], [<span className="y">physics engine??</span>] ...well...anything!! as long as you add your own unique twist to it :-) and don't forget to hackatime! (see below for more info)
                     </p>
                     <div className="lg:px-16 px-8">
-                        <button className="otherbtn mt-[40px] lg:mb-[60px] mb-[60px] font-pirkkala text-xl" onClick={gotoForm}>Submit</button>
-                        {/*<button className="coolbtn mb-[60px] font-pirkkala text-xl lg:ml-[12px]">Hardware/Art Time Tracker</button>*/}
+                        <button className="rainbowbtn mt-[40px] lg:mb-[60px] mb-[60px] font-pirkkala text-xl" onClick={gotoForm}>Submit</button>
                     </div>
                 </fieldset>
                 <div className="flex lg:mx-[2%] mx-[5%] mt-[20%] lg:mt-[5%] justify-between lg:flex-row flex-col h-auto">
@@ -142,7 +133,7 @@ export default function Home() {
                                 <img src="assets/prize.gif" className="pixel w-[70%] h-auto" />
                                 <img src="prizes/3.png" className="absolute w-[70%]" />
                             </div>
-                            <p className="text-center my-5 font-pirkkala text-xl"><span className="b">impressive:</span> get a TI-84 plus CE! (~24hr)</p>
+                            <p className="text-center my-5 font-pirkkala text-xl"><span className="b">impressive:</span> get a TI-84 plus CE / any graphing calc! (~24hr)</p>
 
                             <div className="relative flex justify-center w-full mt-[50px] h-auto">
                                 <img src="prizes/huh.PNG" className="w-[70%] pixel" />
@@ -186,7 +177,7 @@ export default function Home() {
                         <span className="b">#1.</span> think of (cool!!!) ideas and allat <br />
                         + + + + + + + + + + + + + + + + + + + <br />
                         <span className="y">#2.</span> track your time with <a href="https://hackatime.hackclub.com/" className="coolink" target="_blank">hackatime</a>, its a tool for time tracking :p <br />
-                        ( -&gt; please use <a href="https://lapse.hackclub.com" className="coolink" target="_blank">lapse</a> for hardware or art tracking!! )<br />
+                        ( -&gt; please use <a href="https://lapse.hackclub.com" className="coolink" target="_blank">lapse</a> for hardware/art tracking!! they support lapse now )<br />
                         - - - - - - - - - - - - - - - - - - - - - - - <br />
                         <span className="l">#3.</span> ask the people in <a href="https://hackclub.enterprise.slack.com/archives/C0ARJHZPU9H" className="coolink" target="_blank">#calculate</a> for feedback! + share your project!!! <br />
                         * * * * * * * * * * * * * * * * * * * * * * * <br />
