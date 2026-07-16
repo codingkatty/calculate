@@ -33,4 +33,8 @@ link's here: https://calculate.hackclub.com<br>
 
 ![calcualtea](app/opengraph-image.png)
 
+## ai use
+
+used ai to make website!! copilot for old website was used for lots of stuff i didn't know how to do- what i can remember was implementing code from online, positioning pixel art so that it looks like how i want it to,.. and from that the new version i didn't use copilot because my school banned it. yay! however, google's search ai may be used when i search for the tailwind equivalent of some class names. i learned how to calculate/position pixel art based on math and stuff from last time ig.
+
 ### okie byee
