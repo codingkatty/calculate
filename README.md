@@ -23,4 +23,14 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## more information
+
+i used nextjs to make this website<br>
+i made this in vscode and procreate for the art<br>
+link's here: https://calculate.hackclub.com<br>
+
+## picture
+
+![calcualtea](app/opengraph-image.png)
+
 ### okie byee
