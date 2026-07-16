@@ -7,7 +7,9 @@ the original one (was scrapped) and I made new one in June. june!! i starts my i
 
 ## how to run this?? (from auto generated nextjs readme)
 
-First, run the development server:
+do `npm i`
+
+and then do this
 
 ```bash
 npm run dev
